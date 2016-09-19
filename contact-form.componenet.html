@@ -1,0 +1,41 @@
+<form>
+
+    <div class="form-group">
+        <!-- for attribute is to tell the relationship between this lable and the text field now when a user click's on the lable the cursor will be seen in the related input field--> 
+        <label for="firstName"> First Name </label>
+        <input 
+            id="firstName" 
+            ngControl="firstName" 
+            #firstName="ngForm" 
+            (change)="log(firstName)" 
+            type="text"
+             class="form-control"
+             required
+             />
+            <!--Here the first name in ngIf is actually a refrence to the variable defined in above tag as #firstName, not to be confused
+            with the dom element name of the input field above --> 
+           <div class="alert alert-danger" *ngIf="firstName.valid" > First name is required</div>  
+    </div>
+    <!--
+
+    Zen code for the below html is 
+    div.form-group>label[for='comment']+input[type='textarea'][id='comment'].form-control
+
+div.form-group>label[for='comment']+textarea[id='comment'].form-control
+
+    for testing copy paste into html bring the cursor at the end and press tab
+ -->
+
+
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea id="comment" cols="30" rows="10" class="form-control"></textarea>
+            
+      </div>
+      <!--
+          zencode for below html  is
+button.btn.btn-primary.[type='submit']
+      -->
+<button class="btn btn-primary " type="submit">Submit</button>
+
+</form>

@@ -1,0 +1,17 @@
+ <h2>Like Component </h2>
+ <!--
+     <i class="glyphicon-heart"
+     [style.backgroundColor]="!isLiked ? '#CCC' : 'pink'"     
+     (click)="onClick()"
+     ></i>
+ -->
+ <i class="glyphicon glyphicon-heart"
+     [class.glyphicon-heart-empty]="!isLiked"
+     [class.glyphicon-heart]="isLiked"
+     
+     
+     (click)="onClick()"
+     ></i>
+ 
+     {{noOfLikes}}
+ 
